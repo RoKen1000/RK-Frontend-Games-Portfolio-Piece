@@ -1,12 +1,12 @@
 
 .full-review-title{
     text-align: center;
+    padding: 10px;
 }
 
 .full-review-image{
-    width: 70%;
+    max-width: 70%;
     height: auto;
-    border: none;
     border-radius: 20px;
     display: block;
     margin-left: auto;
@@ -15,17 +15,47 @@
 
 .full-review-info, .full-review-category{
     text-align: center;
+    padding: 10px;
 }
 
 .full-review-body{
-    margin-left: 20px;
     margin-top: 20px;
     margin-bottom: 20px;
     font-size: x-large;
 }
 
-.button-container{
+.full-review-button-container{
     display: flex;
     justify-content: space-around;
     margin-bottom: 20px;
+    align-items: center;
+}
+
+.full-review-body-container{
+    display: flex;
+    justify-content: center;
+}
+
+.review-loading-message{
+    text-align: center;
+    margin-top: 200px;
+}
+
+@media screen and (min-width: 800px){
+    .full-review-body{
+        width: 700px;
+    }
+    .button-container{
+        width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media screen and (max-width: 800px){
+    .full-review-body{
+        width: 700px;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
 }
