@@ -1,0 +1,31 @@
+
+.full-review-title{
+    text-align: center;
+}
+
+.full-review-image{
+    width: 70%;
+    height: auto;
+    border: none;
+    border-radius: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.full-review-info, .full-review-category{
+    text-align: center;
+}
+
+.full-review-body{
+    margin-left: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: x-large;
+}
+
+.button-container{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
