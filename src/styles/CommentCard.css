@@ -1,0 +1,30 @@
+.comment-card{
+    border: solid black;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
+    margin-bottom: 20px;
+    font-size: large;
+    background-color: rgb(168, 227, 230);
+}
+
+.comment-body{
+    margin-left: 20px;
+    margin-right: 20px;
+    font-size: x-large;
+}
+
+.comment-delete-button{
+    background-color: rgb(253, 134, 134);
+    margin-bottom: 10px;
+}
+
+@media screen and (min-width: 800px){
+    .comment-card{
+        width: 700px;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+}

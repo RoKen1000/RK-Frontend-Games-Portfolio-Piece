@@ -2,6 +2,11 @@
 .full-review-title{
     text-align: center;
     padding: 10px;
+    font-size: xx-large;
+}
+
+.full-review-designer{
+    text-align: center;
 }
 
 .full-review-image{
@@ -45,7 +50,7 @@
     .full-review-body{
         width: 700px;
     }
-    .button-container{
+    .full-review-button-container{
         width: 700px;
         margin-left: auto;
         margin-right: auto;
