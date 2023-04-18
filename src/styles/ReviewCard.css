@@ -1,0 +1,33 @@
+.review-card{
+    border: solid black;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
+    margin-bottom: 20px;
+}
+
+.card-title{
+    text-align: center;
+}
+
+.review-thumbnail{
+    width: 250px;
+    height: 200px;
+    border-radius: 20px;
+}
+
+.review-info{
+    text-align: center;
+}
+
+.view-full-review-button{
+    text-align: center;
+    padding: 10px;
+    width: 50%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+

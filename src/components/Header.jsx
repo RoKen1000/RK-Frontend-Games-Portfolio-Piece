@@ -9,11 +9,15 @@ export const Header = () => {
     const [user, setUser] = useState("tickle122")
 
     return(
-        <div className="header">
-            <img src={logo} alt="website-logo" className="logo" />
-            
-            <NavBar />
-            <LoggedInUser user={user}/>
-        </div>
+        <header>
+            <div className="page-title">
+                <h1>NC Games</h1>
+            </div>
+            <div className="header">
+                <img src={logo} alt="website-logo" className="logo" />
+                <NavBar />
+                <LoggedInUser user={user}/>
+            </div>
+        </header>
     )
 }
