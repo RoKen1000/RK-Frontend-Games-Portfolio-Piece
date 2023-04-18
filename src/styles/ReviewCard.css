@@ -24,10 +24,18 @@
 
 .view-full-review-button{
     text-align: center;
-    padding: 10px;
-    width: 50%;
+    width: 80%;
     margin-top: 10px;
     margin-bottom: 10px;
+}
+
+.view-full-review-button-text{
+    font-size: medium;
+}
+
+
+.view-full-review-button:hover{
+    cursor: pointer;
 }
 
 

@@ -30,6 +30,7 @@ export const ReviewContainer = () => {
                     date={review.created_at}
                     comments={review.comment_count}
                     votes={review.votes}
+                    review_id={review.review_id}
                 />
             })}
         </div>
