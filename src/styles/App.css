@@ -4,43 +4,34 @@
 
 
 .header{
-  display: flex;
-  justify-content: space-between;
+  display: grid;
   background-color: cadetblue;
+  grid-template-columns: 1fr auto 1fr;
 }
 
 .logo{
   max-width: 280px;
   height: auto;
   margin-top: 10px;
+  
 }
 
 @media screen and (max-width: 800px){
   .logo{
     display: none;
   }
-  .user-logged-in{
-    display: none;
-  }
   .navbar-links{
     margin: auto;
     margin-bottom: 20px;
   }
-  .user-avatar{
-    width: 10%;
-    height: 80px;
+  .header{
+    display: grid;
+    background-color: cadetblue;
+    grid-template-columns: 1fr ;
   }
-}
-
-
-@media screen and (max-width: 800px){
-  .user-avatar{
-    display: none;
+  .user-profile{
+    margin-left: 0px;
   }
-}
-
-.user-logged-in{
-  margin-right: 20px;
 }
 
 .navbar-links{
@@ -58,16 +49,24 @@
   border-radius: 4px;
   color: black;
   text-align: center;
+
+}
+
+.user-profile{
+  display: flex;
+  justify-content: center;
+  background-color: cadetblue;
+  flex-direction: column;
+  align-items: center;
 }
 
 .user-avatar{
-  width: 80%;
+  width: 100px;
   height: 100px;
   border: black solid;
   border-radius: 50%;
   object-fit: cover;
   background-color: white;
-  margin-top: 10px;
 }
 
 .page-title{

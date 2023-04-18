@@ -6,13 +6,18 @@ import "../styles/ReviewContainer.css"
 export const ReviewContainer = () => {
 
     const [reviews, setReviews] = useState([])
+    const [isLoading, setIsLoading] = useState(false)
 
     useEffect(() => {
+        setIsLoading(true)
         fetchReviews()
         .then((returnedReviews) => {
+            setIsLoading(false)
             setReviews(returnedReviews)
         })
     }, [])
+
+    if(isLoading) return <h1 className="loading-statement">Loading...</h1>
 
     return(
         <div className="reviews-container">
