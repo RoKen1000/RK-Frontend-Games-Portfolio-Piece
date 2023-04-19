@@ -1,0 +1,14 @@
+.comments-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    align-items: center;
+}
+
+.no-comments-message, .comments-loading-message{
+    text-align: center;
+    font-size: x-large;
+    padding: 20px;
+}

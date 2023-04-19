@@ -17,3 +17,10 @@ export const fetchSpecificReview = (review_id) => {
         return response.data.review
     })
 }
+
+export const fetchReviewComments = (review_id) => {
+    return reviewApi.get(`/reviews/${review_id}/comments`)
+    .then((response) => {
+        return response.data.comments
+    })
+}

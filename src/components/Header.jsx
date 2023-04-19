@@ -1,12 +1,10 @@
 import logo from "../images/logo.png"
 import { LoggedInUser } from "./LoggedInUser"
 import { NavBar } from "./NavBar"
-import { useState } from "react"
 
 
-export const Header = () => {
 
-    const [user, setUser] = useState("tickle122")
+export const Header = ({user}) => {
 
     return(
         <header>
