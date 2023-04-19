@@ -6,3 +6,9 @@
     margin-bottom: 20px;
     align-items: center;
 }
+
+.no-comments-message, .comments-loading-message{
+    text-align: center;
+    font-size: x-large;
+    padding: 20px;
+}
