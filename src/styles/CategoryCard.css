@@ -1,0 +1,7 @@
+.category-card{
+    border: solid black;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}

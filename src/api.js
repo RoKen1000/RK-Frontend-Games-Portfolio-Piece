@@ -38,3 +38,10 @@ export const postComment = (review_id, username, body) => {
         return response.data.comment
     })
 }
+
+export const fetchCategories = () => {
+    return reviewApi.get("/categories")
+    .then((response) => {
+        return response.data.categories
+    })
+}
