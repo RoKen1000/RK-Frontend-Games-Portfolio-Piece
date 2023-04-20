@@ -18,14 +18,14 @@
     margin-right: auto;
 }
 
-.full-review-info, .full-review-category{
+.full-review-info, .full-review-category, .full-review-vote-count, .error-message{
     text-align: center;
     padding: 10px;
 }
 
 .full-review-body{
     margin-top: 20px;
-    margin-bottom: 20px;
+    
     font-size: x-large;
 }
 

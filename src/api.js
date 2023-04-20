@@ -24,3 +24,10 @@ export const fetchReviewComments = (review_id) => {
         return response.data.comments
     })
 }
+
+export const patchVotes = (vote_increment, review_id) => {
+    return reviewApi.patch(`/reviews/${review_id}`, {inc_votes: vote_increment})
+    .then((response) => {
+        return response.data.updatedReview.votes
+    })
+}
