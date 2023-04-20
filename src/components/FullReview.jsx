@@ -40,7 +40,6 @@ export const FullReview = ({user}) => {
                 {error ? <h2 className="error-message">Something went wrong. Try again later.</h2> : null}
                 <div className="full-review-button-container">
                     <LikeButtons setVotes={setVotes} votes={votes} review_id={review_id} setError={setError} originalVoteCount={fullReview.votes}/>
-                    <button>Post A Comment</button>
                 </div>
             </section>
             <section>

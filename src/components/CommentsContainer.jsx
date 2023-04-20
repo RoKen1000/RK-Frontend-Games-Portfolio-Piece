@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import { fetchReviewComments } from "../api"
 import { CommentCard } from "./CommentCard"
 import "../styles/CommentContainer.css"
+import { PostComment } from "./PostComment"
 
 export const CommentsContainer = ({review_id, user}) => {
 
@@ -23,6 +24,11 @@ export const CommentsContainer = ({review_id, user}) => {
 
     return(
         <div className="comments-container">
+            <PostComment 
+                comments={comments} 
+                setComments={setComments}
+                review_id={review_id}
+                user={user}/>
             {comments.map((comment) => {
                 return <CommentCard 
                     key={comment.comment_id}

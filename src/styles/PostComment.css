@@ -1,0 +1,38 @@
+.post-comment-container{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    align-items: center;
+}
+
+.post-comment-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.post-comment-button{
+    margin: 10px;
+    width: 150px;
+    font-size: large;
+}
+
+.post-comment-submit-button{
+    margin: 10px;
+}
+
+.post-comment-error-message{
+    text-align: center;
+    font-size: x-large;
+}
+
+.post-comment-body{
+    width: 150%;
+    height: 100px;
+}
+
+@media screen and (min-width: 800px){
+    .post-comment-body{
+        width: 400px;
+    }
+}
