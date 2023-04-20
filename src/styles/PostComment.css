@@ -1,0 +1,17 @@
+.post-comment-container, .post-comment-form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.post-comment-button{
+    padding: 10px;
+}
+
+.post-comment-form{
+    border: solid black;
+}
+
+.post-comment-error-message{
+    text-align: center;
+}
