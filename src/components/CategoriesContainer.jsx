@@ -18,17 +18,20 @@ export const CategoriesContainer = () => {
         })
     }, [])
 
-    if(isLoading) return <h1>Loading...</h1>
+    if(isLoading) return <h1 className="loading-statement">Loading...</h1>
 
     return(
-        <div className="categories-container">
-            {categories.map((category) => {
-                return <CategoryCard
-                    key={uuidv4()}
-                    category={category.slug}
-                    description={category.description}
-                />
-            })}
-        </div>
+        <main>
+            <h1 id="category-instruction">Filter reviews by category here:</h1>
+            <div className="categories-container">
+                {categories.map((category) => {
+                    return <CategoryCard
+                        key={uuidv4()}
+                        category={category.slug}
+                        description={category.description}
+                    />
+                })}
+            </div>
+        </main>
     )
 }

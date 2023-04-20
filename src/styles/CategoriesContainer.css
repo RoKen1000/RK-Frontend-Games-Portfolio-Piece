@@ -4,4 +4,11 @@
     justify-content: space-around;
     margin-top: 20px;
     margin-bottom: 20px;
+    margin: 0 auto;
+}
+
+@media screen and (min-width: 600px){
+    .categories-container{
+        width: 80vw;
+    }
 }

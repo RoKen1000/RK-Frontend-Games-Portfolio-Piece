@@ -13,45 +13,14 @@ export const ReviewContainer = () => {
 
     useEffect(() => {
         setIsLoading(true)
-        fetchReviews()
+        fetchReviews(category)
         .then((returnedReviews) => {
             setIsLoading(false)
             setReviews(returnedReviews)
         })
-    }, [])
-
-    const filteredReviews = reviews.filter((review) => {
-        if(review.category === category){
-            return review
-        }
-    })
+    }, [category])
 
     if(isLoading) return <h1 className="loading-statement">Loading...</h1>
-
-    if(category){
-        const filteredReviews = reviews.filter((review) => {
-            if(review.category === category){
-                return review
-            }
-        })
-
-        return(
-            <div className="reviews-container">
-                {filteredReviews.map((review) => {
-                    return <ReviewCard 
-                        key={review.review_id}
-                        title={review.title}
-                        category={review.category}
-                        image={review.review_img_url}
-                        date={review.created_at}
-                        comments={review.comment_count}
-                        votes={review.votes}
-                        review_id={review.review_id}
-                    />
-                })}
-            </div>
-        )
-    }
 
     return(
         <div className="reviews-container">
