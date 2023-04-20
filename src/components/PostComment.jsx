@@ -30,8 +30,8 @@ export const PostComment = ({comments, setComments, review_id, user}) => {
             <button className="post-comment-button" onClick={() => setShowCommentBox(true)}>Post A Comment</button>
             {showCommentBox === true ?
                 <form onSubmit={handleCommentPost} className="post-comment-form">
-                    <label htmlFor="comment-body" >Enter Comment: </label><br></br>
-                    <textarea type="text" value={commentText} id="post-comment-body" required onChange={(e) => setCommentText(e.target.value)}></textarea><br></br>
+                    <label htmlFor="comment-body"><strong>Enter Comment:</strong></label><br></br>
+                    <textarea type="text" value={commentText} className="post-comment-body" required onChange={(e) => setCommentText(e.target.value)}></textarea><br></br>
                     <button type="submit" disabled={isCommentPosting === true} onClick={() => setCommentPostError(false)} className="post-comment-submit-button">Submit</button>
                 </form> 
                 : null}
