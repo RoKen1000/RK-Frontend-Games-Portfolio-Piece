@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { postComment } from "../api"
+import "../styles/PostComment.css"
 
 export const PostComment = ({comments, setComments, review_id, user}) => {
 
@@ -15,6 +16,7 @@ export const PostComment = ({comments, setComments, review_id, user}) => {
         .then((newComment) => {
             setIsCommentPosting(false)
             setShowCommentBox(false)
+            setCommentText("")
             setComments([newComment, ...comments])
         })
         .catch((error) => {
@@ -27,10 +29,10 @@ export const PostComment = ({comments, setComments, review_id, user}) => {
         <div className="post-comment-container">
             <button className="post-comment-button" onClick={() => setShowCommentBox(true)}>Post A Comment</button>
             {showCommentBox === true ?
-                <form className="post-comment-form" onSubmit={handleCommentPost}>
+                <form onSubmit={handleCommentPost} className="post-comment-form">
                     <label htmlFor="comment-body" >Enter Comment: </label><br></br>
-                    <input className="post-comment-form" type="text" value={commentText} id="comment-body" required onChange={(e) => setCommentText(e.target.value)}></input><br></br>
-                    <button id="comment-body" type="submit" disabled={isCommentPosting === true} onClick={() => setCommentPostError(false)}>Post Comment</button>
+                    <textarea type="text" value={commentText} id="post-comment-body" required onChange={(e) => setCommentText(e.target.value)}></textarea><br></br>
+                    <button type="submit" disabled={isCommentPosting === true} onClick={() => setCommentPostError(false)} className="post-comment-submit-button">Submit</button>
                 </form> 
                 : null}
             {isCommentPosting ? <h1>Posting Comment...</h1> : null}
