@@ -40,8 +40,15 @@ export const postComment = (review_id, username, body) => {
 }
 
 export const fetchCategories = () => {
-    return reviewApi.get("/categories")
+    return reviewApi.get(`/categories`)
     .then((response) => {
         return response.data.categories
+    })
+}
+
+export const deleteComment = (comment_id) => {
+    return reviewApi.delete(`/comments/${comment_id}`)
+    .then((response) => {
+        return response.status
     })
 }

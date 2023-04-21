@@ -20,7 +20,18 @@ export const CommentsContainer = ({review_id, user}) => {
 
     if(commentsLoading) return <h1 className="comments-loading-message">Comments Loading...</h1>
 
-    if(comments.length === 0) return <h1 className="no-comments-message">No Comments</h1>
+    if(comments.length === 0){
+        return(
+            <div className="comments-container">
+                 <PostComment 
+                    comments={comments} 
+                    setComments={setComments}
+                    review_id={review_id}
+                    user={user}/>
+                <h1 className="no-comments-message">No Comments</h1>
+            </div>
+        )
+    } <h1 className="no-comments-message">No Comments</h1>
 
     return(
         <div className="comments-container">
@@ -38,6 +49,7 @@ export const CommentsContainer = ({review_id, user}) => {
                     comment_date={comment.created_at}
                     review_id={comment.review_id}
                     user={user}
+                    comment_id={comment.comment_id}
                 />
             })}
         </div>
