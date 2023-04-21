@@ -18,6 +18,7 @@ function App() {
         <Route path="/reviews/:review_id" element={<FullReview user={user}/>} />
         <Route path="/categories" element={<CategoriesContainer/>}/>
         <Route path="/reviews/categories/:category" element={<ReviewContainer/>}/>
+        <Route path="/reviews/search?sort_by=date&order=asc" element={<ReviewContainer/>}/>
       </Routes>
     </div>
   );
