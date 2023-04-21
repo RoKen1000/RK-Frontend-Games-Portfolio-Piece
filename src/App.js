@@ -5,6 +5,7 @@ import { ReviewContainer } from './components/ReviewContainer';
 import { FullReview } from './components/FullReview';
 import { useState } from 'react';
 import { CategoriesContainer } from './components/CategoriesContainer';
+import { BadPathError } from './components/BadPathError';
 
 function App() {
 
@@ -14,6 +15,7 @@ function App() {
     <div>
       <Header user={user}/>
       <Routes>
+        <Route path="*" element={<BadPathError/>}/>
         <Route path="/reviews" element={<ReviewContainer/>} />
         <Route path="/reviews/:review_id" element={<FullReview user={user}/>} />
         <Route path="/categories" element={<CategoriesContainer/>}/>

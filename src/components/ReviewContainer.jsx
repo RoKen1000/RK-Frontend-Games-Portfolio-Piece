@@ -4,6 +4,7 @@ import {fetchReviews} from "../api"
 import { ReviewCard } from "./ReviewCard"
 import "../styles/ReviewContainer.css"
 import { SearchQuery } from "./SearchQuery"
+import { ErrorComponent } from "./ErrorComponent"
 
 
 export const ReviewContainer = () => {
@@ -12,6 +13,7 @@ export const ReviewContainer = () => {
     const [isLoading, setIsLoading] = useState(false)
     const {category} = useParams()
     const [showSearchBar, setShowSearchBar] = useState(false)
+    const [error, setError] = useState(null)
 
     const [searchParams, setSearchParams] = useSearchParams()
     const sortByQuery = searchParams.get("sort_by")
@@ -24,9 +26,15 @@ export const ReviewContainer = () => {
             setIsLoading(false)
             setReviews(returnedReviews)
         })
+        .catch((error) => {
+            setIsLoading(false)
+            setError(error.response.data)
+        })
     }, [category, sortByQuery, orderQuery])
 
     if(isLoading) return <h1 className="loading-statement">Loading...</h1>
+
+    if(error) return <ErrorComponent error={error}/>
 
     return(
         <main>
