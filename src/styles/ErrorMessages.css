@@ -1,0 +1,15 @@
+.error-message{
+    margin: auto;
+    border: red solid;
+    box-sizing: border-box;
+    background-color: antiquewhite;
+    text-align: center;
+    width: 80%;
+    justify-content: center;
+}
+
+@media screen and (min-width: 450px){
+    .bad-path-error{
+        width: 400px;
+    }
+}

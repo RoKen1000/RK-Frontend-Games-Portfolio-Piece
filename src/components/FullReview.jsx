@@ -4,6 +4,7 @@ import { fetchSpecificReview } from "../api"
 import "../styles/FullReview.css"
 import {CommentsContainer} from "./CommentsContainer"
 import { LikeButtons } from "./LikeButtons"
+import { ErrorComponent } from "./ErrorComponent"
 
 export const FullReview = ({user}) => {
     const {review_id} = useParams()
@@ -11,7 +12,7 @@ export const FullReview = ({user}) => {
     const [fullReview, setFullReview] = useState({})
     const [reviewLoading, setReviewLoading] = useState(false)
     const [votes, setVotes] = useState(0)
-    const [error, setError] = useState(false)
+    const [error, setError] = useState(null)
     
     useState(() => {
         setReviewLoading(true)
@@ -21,9 +22,15 @@ export const FullReview = ({user}) => {
             setFullReview(review)
             setVotes(review.votes)
         })
+        .catch((error) => {
+            setReviewLoading(false)
+            setError(error.response.data)
+        })
     }, [])
 
     if(reviewLoading) return <h1 className="review-loading-message">Loading Review...</h1>
+
+    if(error) return <ErrorComponent error={error}/>
 
     return(
         <article>
@@ -37,13 +44,12 @@ export const FullReview = ({user}) => {
                     <p className="full-review-body">{fullReview.review_body}</p>
                 </div>
                 <h2 className="full-review-vote-count">Votes: {votes}</h2>
-                {error ? <h2 className="error-message">Something went wrong. Try again later.</h2> : null}
                 <div className="full-review-button-container">
-                    <LikeButtons setVotes={setVotes} votes={votes} review_id={review_id} setError={setError} originalVoteCount={fullReview.votes}/>
+                    <LikeButtons setVotes={setVotes} votes={votes} review_id={review_id} originalVoteCount={fullReview.votes}/>
                 </div>
             </section>
             <section>
-                <CommentsContainer review_id={review_id} user={user} setError={setError}/>
+                <CommentsContainer review_id={review_id} user={user}/>
             </section>
         </article>
     )

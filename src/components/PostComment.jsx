@@ -8,14 +8,20 @@ export const PostComment = ({comments, setComments, review_id, user}) => {
     const [commentText, setCommentText] = useState("")
     const [isCommentPosting, setIsCommentPosting] = useState(false)
     const [commentPostError, setCommentPostError] = useState(false)
+    const [stopBlankPosting, setStopBlankPosting] = useState(false)
 
     const handleCommentPost = (e) => {
         e.preventDefault()
+        if(!/[A-Za-z]/g.test(commentText)){
+            setStopBlankPosting(true)
+            return
+        } 
         setIsCommentPosting(true)  
         postComment(review_id, user, commentText)
         .then((newComment) => {
             setIsCommentPosting(false)
             setShowCommentBox(false)
+            setStopBlankPosting(false)
             setCommentText("")
             setComments([newComment, ...comments])
         })
@@ -37,6 +43,7 @@ export const PostComment = ({comments, setComments, review_id, user}) => {
                 : null}
             {isCommentPosting ? <h1>Posting Comment...</h1> : null}
             {commentPostError ? <h1 className="post-comment-error-message">Something went wrong. Comment post failed.</h1> : null}
+            {stopBlankPosting ? <h1 className="post-comment-error-message">Comment must not be blank.</h1> : null}
         </div>
     )
 }
