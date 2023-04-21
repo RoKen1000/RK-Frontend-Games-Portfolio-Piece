@@ -1,21 +1,24 @@
 import { useState, useEffect } from "react"
+import { useParams } from "react-router-dom"
 import {fetchReviews} from "../api"
 import { ReviewCard } from "./ReviewCard"
 import "../styles/ReviewContainer.css"
+
 
 export const ReviewContainer = () => {
 
     const [reviews, setReviews] = useState([])
     const [isLoading, setIsLoading] = useState(false)
+    const {category} = useParams()
 
     useEffect(() => {
         setIsLoading(true)
-        fetchReviews()
+        fetchReviews(category)
         .then((returnedReviews) => {
             setIsLoading(false)
             setReviews(returnedReviews)
         })
-    }, [])
+    }, [category])
 
     if(isLoading) return <h1 className="loading-statement">Loading...</h1>
 
