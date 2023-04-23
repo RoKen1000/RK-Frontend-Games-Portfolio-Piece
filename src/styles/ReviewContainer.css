@@ -19,3 +19,8 @@
     text-align: center;
     margin-top: 200px;
 }
+
+.filter-reviews-button{
+    display: block;
+    margin: auto;
+}
