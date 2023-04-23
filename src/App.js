@@ -15,7 +15,7 @@ function App() {
   const location = useLocation()
 
   return (
-    <div className='test'>
+    <div>
       {location.pathname !== "/" ? <Header user={user}/> : null}
       <Routes>
         <Route path="*" element={<BadPathError/>}/>

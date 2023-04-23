@@ -1,0 +1,21 @@
+
+.search-query-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.search-query-sort-by{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 300px;
+    padding: 10px;
+}
+
+.search-query-order-by{
+    display: flex;
+    justify-content: space-around;
+    width: 220px;
+    padding-bottom: 10px;
+}

@@ -13,6 +13,7 @@ export const ReviewContainer = () => {
     const [isLoading, setIsLoading] = useState(false)
     const {category} = useParams()
     const [showSearchBar, setShowSearchBar] = useState(false)
+    const [showSearchButton, setShowSearchButton] = useState(true)
     const [error, setError] = useState(null)
 
     const [searchParams, setSearchParams] = useSearchParams()
@@ -25,10 +26,12 @@ export const ReviewContainer = () => {
         .then((returnedReviews) => {
             setIsLoading(false)
             setReviews(returnedReviews)
+            setShowSearchButton(true)
         })
         .catch((error) => {
             setIsLoading(false)
             setError(error.response.data)
+            setShowSearchButton(true)
         })
     }, [category, sortByQuery, orderQuery])
 
@@ -38,8 +41,8 @@ export const ReviewContainer = () => {
 
     return(
         <main>
-            <button onClick={() => setShowSearchBar(true)}>Search Through Reviews</button>
-            {showSearchBar ? <SearchQuery searchParams={searchParams} setSearchParams={setSearchParams}/> : null}
+            {showSearchButton ? <button className="filter-reviews-button" onClick={() => {setShowSearchBar(true); setShowSearchButton(false)}}>Filter Reviews</button> : null}
+            {showSearchBar ? <SearchQuery searchParams={searchParams} setSearchParams={setSearchParams} setShowSearchBar={setShowSearchBar} setShowSearchButton={setShowSearchButton}/> : null}
             <div className="reviews-container">
                 {reviews.map((review) => {
                     return <ReviewCard 
