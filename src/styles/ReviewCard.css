@@ -8,9 +8,16 @@
     margin-bottom: 20px;
 }
 
+@media screen and (max-width: 290px){
+    .review-card{
+        width: 250px;
+    }
+}
+
 .card-title{
     text-align: center;
     font-size: larger;
+    padding: 5px;
 }
 
 .review-thumbnail{
