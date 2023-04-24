@@ -36,9 +36,19 @@
 }
 
 @media screen and (min-width: 800px){
-    .comment-card{
+    .comment-card, .comment-deleted-card{
         width: 700px;
         margin-left: 20px;
         margin-right: 20px;
+    }
+}
+
+@media screen and (max-width: 290px){
+    .comment-card, .comment-deleted-card{
+        width: 250px;
+    }
+
+    .comment-posted-by{
+        font-size: medium;
     }
 }

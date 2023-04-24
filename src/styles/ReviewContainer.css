@@ -15,6 +15,14 @@
     }
 }
 
+@media screen and (min-width: 250px){
+    .reviews-container{
+        margin-left: 10px;
+        margin-right: 10px;
+        align-items: center;
+    }
+}
+
 .loading-statement{
     text-align: center;
     margin-top: 200px;
