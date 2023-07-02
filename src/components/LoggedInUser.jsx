@@ -1,4 +1,5 @@
 import { useLocation } from "react-router-dom"
+import "../styles/Header.css"
 
 export const LoggedInUser = ({user}) => {
 
