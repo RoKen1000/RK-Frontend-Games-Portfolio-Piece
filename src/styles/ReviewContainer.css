@@ -32,3 +32,9 @@
     display: block;
     margin: auto;
 }
+
+@media screen and (min-width: 750px){
+    .reviews-container{
+        flex-direction: column;
+    }
+}
