@@ -13,8 +13,8 @@ export const Header = ({user}) => {
             </div>
             <div className="header">
                 <img src={logo} alt="website-logo" className="logo" />
-                <NavBar />
                 <LoggedInUser user={user}/>
+                <NavBar />
             </div>
         </header>
     )
