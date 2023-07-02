@@ -7,13 +7,11 @@ import { SearchQuery } from "./SearchQuery"
 import { ErrorComponent } from "./ErrorComponent"
 
 
-export const ReviewContainer = () => {
+export const AllReviewsPage = () => {
 
     const [reviews, setReviews] = useState([])
     const [isLoading, setIsLoading] = useState(false)
     const {category} = useParams()
-    const [showSearchBar, setShowSearchBar] = useState(false)
-    const [showSearchButton, setShowSearchButton] = useState(true)
     const [error, setError] = useState(null)
 
     const [searchParams, setSearchParams] = useSearchParams()
@@ -26,12 +24,10 @@ export const ReviewContainer = () => {
         .then((returnedReviews) => {
             setIsLoading(false)
             setReviews(returnedReviews)
-            setShowSearchButton(true)
         })
         .catch((error) => {
             setIsLoading(false)
             setError(error.response.data)
-            setShowSearchButton(true)
         })
     }, [category, sortByQuery, orderQuery])
 
@@ -41,8 +37,7 @@ export const ReviewContainer = () => {
 
     return(
         <main>
-            {showSearchButton ? <button className="filter-reviews-button" onClick={() => {setShowSearchBar(true); setShowSearchButton(false)}}>Filter Reviews</button> : null}
-            {showSearchBar ? <SearchQuery searchParams={searchParams} setSearchParams={setSearchParams} setShowSearchBar={setShowSearchBar} setShowSearchButton={setShowSearchButton}/> : null}
+           <SearchQuery searchParams={searchParams} setSearchParams={setSearchParams} />
             <div className="reviews-container">
                 {reviews.map((review) => {
                     return <ReviewCard 
