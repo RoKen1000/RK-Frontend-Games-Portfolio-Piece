@@ -1,17 +1,11 @@
 .review-card{
-    border: solid black;
-    border-radius: 20px;
+    border-radius: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 300px;
     margin-bottom: 20px;
-}
-
-@media screen and (max-width: 290px){
-    .review-card{
-        width: 250px;
-    }
+    background-color: rgb(221, 217, 211);
 }
 
 .card-title{
@@ -21,29 +15,55 @@
 }
 
 .review-thumbnail{
-    width: 250px;
+    width: 300px;
     height: 200px;
-    border-radius: 20px;
 }
 
 .review-info{
     text-align: center;
 }
 
-.view-full-review-button{
-    text-align: center;
-    width: 80%;
-    margin-top: 10px;
+.review-card-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin-bottom: 10px;
+    padding: 10px;
 }
 
 .view-full-review-button-text{
     font-size: medium;
 }
 
+@media screen and (max-width: 290px){
+    .review-card{
+        width: 250px;
+    }
+    .review-thumbnail{
+        width: 250px;
+    }
+}
 
-.view-full-review-button:hover{
-    cursor: pointer;
+@media screen and (min-width: 600px){
+    .review-card{
+        height: 350px;
+    }
+}
+
+@media screen and (min-width: 750px){
+    .review-card{
+        width: 700px;
+        height: 210px;
+        flex-direction: row;
+        overflow: hidden;
+    }
+    .review-thumbnail{
+        height: 215px;
+    }
+    .review-card-content{
+        margin: 0;
+        width: 380px;
+    }
 }
 
 
