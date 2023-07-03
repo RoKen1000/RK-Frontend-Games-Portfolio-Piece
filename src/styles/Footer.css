@@ -1,0 +1,13 @@
+footer{
+    height: auto;
+    background-color: rgb(140, 198, 200);
+}
+
+footer p{
+    text-align: center;
+    padding: 10px;
+}
+
+footer a{
+    color: black;
+}
