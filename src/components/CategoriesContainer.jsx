@@ -22,7 +22,7 @@ export const CategoriesContainer = () => {
 
     return(
         <main>
-            <h1 id="category-instruction">Filter reviews by category here:</h1>
+            <h1 id="category-instruction">View reviews by category here</h1>
             <div className="categories-container">
                 {categories.map((category) => {
                     return <CategoryCard
