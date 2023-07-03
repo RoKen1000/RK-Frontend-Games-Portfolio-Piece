@@ -4,7 +4,7 @@ import {Link} from "react-router-dom"
 export const CategoryCard = ({category, description}) => {
 
     return(
-        <Link to={`/reviews/categories/${category}`}>
+        <Link className="category-card-link" to={`/reviews/categories/${category}`}>
             <div className="category-card">
                 <h1>{category}</h1>
                 <p>{description}</p>

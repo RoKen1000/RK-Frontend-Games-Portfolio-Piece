@@ -2,7 +2,7 @@ import { useState, useEffect } from "react"
 import { useParams, useSearchParams } from "react-router-dom"
 import {fetchReviews} from "../api"
 import { ReviewCard } from "./ReviewCard"
-import "../styles/ReviewContainer.css"
+import "../styles/AllReviewsPage.css"
 import { SearchQuery } from "./SearchQuery"
 import { ErrorComponent } from "./ErrorComponent"
 

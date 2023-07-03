@@ -1,14 +1,22 @@
 .category-card{
-    border: solid black;
-    border-radius: 20px;
+    border-radius: 10px;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     flex-direction: column;
     margin: 15px;
-    background-color: rgb(241, 225, 188);
+    background-color: rgb(221, 217, 211);
     text-align: center;
-   
+    height: auto;
+    color: black;
+}
+
+.category-card-link{
+    text-decoration: none;
+}
+
+#category-instruction{
+    text-align: center;
 }
 
 @media screen and (min-width: 400px){
@@ -17,7 +25,8 @@
     }
 }
 
-#category-instruction{
-    text-align: center;
-    padding: 10px;
+@media screen and (min-width: 1000px){
+    .category-card{
+        height: 100px;
+    }
 }
