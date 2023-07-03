@@ -3,7 +3,13 @@
 
 
 ## Description
-This React app is a website in which users can view reviews on board games. They may see all available reviews on the site via a series of review cards which they can then click to see the full review. The user can also apply several filters that can be used when viewing the review cards such as filtering by comment count, votes and date. They can also choose to order the results either ascending or descending. Within the full review a user can like or dislike the review and can read and post comments which appear underneath the main review body. The user can also delete a comment they have posted if needed. Through the nav bar the user can go to a page which displays all of the board game categories. Clicking on one of these categories allows a user to view reviews that are exclusively for a board game of that kind of category.
+This React app is a website in which users can view reviews on board games.
+
+For demonstration purposes, a pre-defined user account has been logged in.
+
+Users may see all available reviews on the site via a series of review cards which they can then click to see the full review. The user can also apply several filters that can be used when viewing the review cards such as filtering by comment count, votes and date. They can also choose to order the results either ascending or descending. 
+
+Within the full review a user can like or dislike the review and can read and post comments which appear underneath the main review body. The user can also delete a comment they have posted if needed. Through the nav bar the user can go to a page which displays all of the board game review categories. Clicking on one of these categories allows a user to view reviews that are exclusively for a board game of that kind of category.
 
 ## Link to API repo
 <a href="https://github.com/RoKen1000/RK-Backend-Games-Portfolio-Piece">The repo that contains the API used to power this app can be found here.</a>
