@@ -1,7 +1,6 @@
 .category-card{
     border-radius: 10px;
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
     flex-direction: column;
     margin: 15px;
@@ -13,6 +12,10 @@
 
 .category-card-link{
     text-decoration: none;
+}
+
+.category-icon{
+    padding: 10px;
 }
 
 #category-instruction{
@@ -27,6 +30,6 @@
 
 @media screen and (min-width: 1000px){
     .category-card{
-        height: 100px;
+        height: 170px;
     }
 }
