@@ -5,12 +5,13 @@ import { ReviewCard } from "./ReviewCard"
 import "../styles/AllReviewsPage.css"
 import { SearchQuery } from "./SearchQuery"
 import { ErrorComponent } from "./ErrorComponent"
+import { Footer } from "./Footer"
 
 
 export const AllReviewsPage = () => {
 
     const [reviews, setReviews] = useState([])
-    const [isLoading, setIsLoading] = useState(false)
+    const [isLoading, setIsLoading] = useState(true)
     const {category} = useParams()
     const [error, setError] = useState(null)
 
@@ -19,7 +20,6 @@ export const AllReviewsPage = () => {
     const orderQuery = searchParams.get("order")
 
     useEffect(() => {
-        setIsLoading(true)
         fetchReviews(category, sortByQuery, orderQuery)
         .then((returnedReviews) => {
             setIsLoading(false)
@@ -36,23 +36,26 @@ export const AllReviewsPage = () => {
     if(error) return <ErrorComponent error={error}/>
 
     return(
-        <main>
-           <SearchQuery searchParams={searchParams} setSearchParams={setSearchParams} />
-            <div className="reviews-container">
-                {reviews.map((review) => {
-                    return <ReviewCard 
-                        key={review.review_id}
-                        title={review.title}
-                        category={review.category}
-                        image={review.review_img_url}
-                        date={review.created_at}
-                        comments={review.comment_count}
-                        votes={review.votes}
-                        review_id={review.review_id}
-                    />
-                })}
-            </div>
-        </main>
+        <div>
+            <main>
+            <SearchQuery searchParams={searchParams} setSearchParams={setSearchParams} />
+                <div className="reviews-container">
+                    {reviews.map((review) => {
+                        return <ReviewCard 
+                            key={review.review_id}
+                            title={review.title}
+                            category={review.category}
+                            image={review.review_img_url}
+                            date={review.created_at}
+                            comments={review.comment_count}
+                            votes={review.votes}
+                            review_id={review.review_id}
+                        />
+                    })}
+                </div>
+            </main>
+            {isLoading ? null : <Footer/>}
+        </div>
     )
 
 }
