@@ -21,8 +21,8 @@ export const LikeButtons = ({setVotes, votes, review_id, originalVoteCount}) => 
 
     return(
         <div>
-                <button onClick={() => handleVote(1)} disabled={votes !== originalVoteCount}>👍</button>
-                <button onClick={() => handleVote(-1)} disabled={votes !== originalVoteCount}>👎</button>
+                <button onClick={() => handleVote(1)} disabled={votes > originalVoteCount}>👍</button>
+                <button onClick={() => handleVote(-1)} disabled={votes < originalVoteCount}>👎</button>
         </div>
     )
 }
