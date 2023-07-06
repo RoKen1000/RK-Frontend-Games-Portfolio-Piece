@@ -1,5 +1,5 @@
 ## Link to hosted version
-<a href="https://nc-game-review-site.netlify.app/">A link to the deployed version of this app can be found here.</a>
+<a href="https://nc-game-review-site.netlify.app/">A link to the deployed version of this site can be found here.</a>
 
 
 ## Description
